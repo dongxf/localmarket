@@ -1,5 +1,4 @@
-Local Market
-============
+This is a modified version of Local Market for learning Meteor, and Even Setting
 
 Local Market is an open source app powered by Meteor and made by [Percolate Studio](http://percolatestudio.com). In this example app we explore intermediate techniques:
 
@@ -7,4 +6,3 @@ Local Market is an open source app powered by Meteor and made by [Percolate Stud
   - Integrating OAUTH with Meteor's accounts-ui package
   - Cordova integration to use device phone and GPS
   - Mobile UI & UX
-  
