@@ -30,7 +30,7 @@
 
   // Configure environment
   "env": {
-    "PORT": 8000,
+    "PORT": 80,
     "ROOT_URL": "http://m.fooways.com/",
     "MONGO_URL": "mongodb://localhost:27017/localmarket"
   },
