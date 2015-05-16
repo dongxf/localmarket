@@ -2,7 +2,7 @@
   // Server authentication info
   "servers": [
     {
-      "host": "foodaa.fooways.com",
+      "host": "m.fooways.com",
       "username": "deploy",
       // "password": ""
       // or pem file (ssh based authentication)
@@ -26,7 +26,7 @@
   "appName": "localmarket",
 
   // Location of app (local directory)
-  "app": "~/Meteor/localmarket",
+  "app": "~/meteor/localmarket",
 
   // Configure environment
   "env": {
