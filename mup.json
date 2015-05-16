@@ -2,7 +2,7 @@
   // Server authentication info
   "servers": [
     {
-      "host": "foodaa.fooways.com",
+      "host": "trust.fooways.com",
       "username": "deploy",
       // "password": ""
       // or pem file (ssh based authentication)
@@ -31,7 +31,7 @@
   // Configure environment
   "env": {
     "PORT": 80,
-    "ROOT_URL": "http://m.fooways.com/",
+    "ROOT_URL": "http://trust.fooways.com/",
     "MONGO_URL": "mongodb://localhost:27017/localmarket"
   },
 
