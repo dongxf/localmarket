@@ -26,7 +26,7 @@
   "appName": "localmarket",
 
   // Location of app (local directory)
-  "app": "~/Meteor/localmarket",
+  "app": "~/meteor/localmarket",
 
   // Configure environment
   "env": {
