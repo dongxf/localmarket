@@ -13,6 +13,8 @@ Template.authOverlay.onCreated(function() {
 
 Template.authOverlay.events({
   'click .js-signin': function() {
-    Meteor.loginWithTwitter({loginStyle: 'redirect'});
+    console.log('hello,world');
+    Meteor.loginWithWeibo();
+    //Meteor.loginWithTwitter({loginStyle: 'redirect'});
   }
 });
