@@ -16,8 +16,10 @@ ServiceConfiguration.configurations.upsert(
   { service: "twitter" },
   {
     $set: {
-      consumerKey: Meteor.settings.twitter.consumerKey,
-      secret: Meteor.settings.twitter.secret
+      //consumerKey: Meteor.settings.twitter.consumerKey,
+      //secret: Meteor.settings.twitter.secret
+      consumerKey: "8P3m74y3i8A97GKhAnErENFnX",
+      secret: "WWITqdxeWvN8ngJ3jT9llhVaTxsPdxjLo4Wzq5ffhAXFZnrLLp"
     }
   }
 );
