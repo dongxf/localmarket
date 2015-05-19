@@ -7,11 +7,12 @@ if (typeof Meteor.settings === 'undefined')
 
 _.defaults(Meteor.settings, {
   twitter: {
-    consumerKey: "PLfrg2bUh0oL0asi3R2fumRjm", 
-    secret: "sRI8rnwO3sx7xUAxNWTX0WEDWph3WEBHu6tTdJYQ5wVrJeVCCt"
+    consumerKey: "8P3m74y3i8A97GKhAnErENFnX",
+    secret: "WWITqdxeWvN8ngJ3jT9llhVaTxsPdxjLo4Wzq5ffhAXFZnrLLp"
   }
 });
 
+/*
 ServiceConfiguration.configurations.upsert(
   { service: "twitter" },
   {
@@ -34,3 +35,4 @@ ServiceConfiguration.configurations.upsert(
     }
    }
 );
+*/
