@@ -24,13 +24,22 @@ ServiceConfiguration.configurations.upsert(
   }
 );
 
+// first, remove configuration entry in case service is already configured
+ServiceConfiguration.configurations.remove({
+  service: "weibo"
+});
+ServiceConfiguration.configurations.insert({
+  service: "weibo",
+  clientId: "2477162906",
+  secret: "b74cbdf3b23d0effa2c3e8620435a42b"
+});
+
 /*
 ServiceConfiguration.configurations.upsert(
   { servcie: "weibo" },
   {
     $set: {
     clientId: "2477162906",
-    loginStyle: "popup",
     secret: "b74cbdf3b23d0effa2c3e8620435a42b"
     }
    }
