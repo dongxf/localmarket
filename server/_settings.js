@@ -12,7 +12,6 @@ _.defaults(Meteor.settings, {
   }
 });
 
-/*
 ServiceConfiguration.configurations.upsert(
   { service: "twitter" },
   {
@@ -25,6 +24,7 @@ ServiceConfiguration.configurations.upsert(
   }
 );
 
+/*
 ServiceConfiguration.configurations.upsert(
   { servcie: "weibo" },
   {
