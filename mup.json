@@ -31,7 +31,7 @@
   // Configure environment
   "env": {
     "PORT": 3888,
-    "ROOT_URL": "http://m.fooways.com",  //can not be "http://m.fooways.com/"; //using export ROOT_URL=http://trust.fooways.com before running meteor
+    "ROOT_URL": "http://trust.fooways.com",  //can not be "http://trust.fooways.com/"; //using export ROOT_URL=http://trust.fooways.com before running meteor
     "MONGO_URL": "mongodb://localhost:27017/localmarket"
   },
 
