@@ -4,9 +4,9 @@
     <!--{{>nav title='Local Market' black=true}}-->
     {{#nav title='Local Market' black=true back=false}}
       {{#if currentUser}}
-        <a href="#" class="nav-item js-remove-bookmark bookmarked"><span class="icon-bookmark"></span></a>
+        <a href="#" class="nav-item js-signout singout"><span class="icon-user"></span></a>
       {{else}}
-        <a href="#" class="nav-item js-add-bookmark"><span class="icon-bookmark-hollow"></span></a>
+        <a href="#" class="nav-item js-signin"><span class="icon-user" style="color:red"></span></a>
       {{/if}}
     {{/nav}}
 

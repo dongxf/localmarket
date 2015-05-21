@@ -20,3 +20,10 @@ Template.home.helpers({
     return News.latest();
   }
 });
+
+Template.home.events({
+  'click .js-signin': function() {
+    //Meteor.loginWithTwitter({loginStyle: 'redirect'});
+    Meteor.loginWithWeibo({loginStyle: 'redirect'});
+  }
+});
