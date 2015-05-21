@@ -25,5 +25,9 @@ Template.home.events({
   'click .js-signin': function() {
     //Meteor.loginWithTwitter({loginStyle: 'redirect'});
     Meteor.loginWithWeibo({loginStyle: 'redirect'});
+  },
+  'click .js-signout': function() {
+    //Meteor.loginWithTwitter({loginStyle: 'redirect'});
+    Meteor.logout();
   }
 });
