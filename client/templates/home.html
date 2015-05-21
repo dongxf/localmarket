@@ -1,7 +1,15 @@
 <template name="home">
   <div class="page home">
 
-    {{>nav title='Local Market' black=true}}
+    <!--{{>nav title='Local Market' black=true}}-->
+    {{#nav title='Local Market' black=true back=false}}
+      {{#if currentUser}}
+        <a href="#" class="nav-item js-remove-bookmark bookmarked"><span class="icon-bookmark"></span></a>
+      {{else}}
+        <a href="#" class="nav-item js-add-bookmark"><span class="icon-bookmark-hollow"></span></a>
+      {{/if}}
+    {{/nav}}
+
 
     <div class="content-scrollable">
       <div class="bg-image home">
