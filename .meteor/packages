@@ -25,3 +25,6 @@ mdg:camera
 mdg:geolocation
 accounts-weibo
 meteorhacks:ssr
+coffeescript
+wylio:mandrill
+mrt:jquery-validate
