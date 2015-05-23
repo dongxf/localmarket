@@ -19,6 +19,8 @@ Template.home.helpers({
   latestNews: function() {
     return News.latest();
   }
+
+
 });
 
 Template.home.events({
@@ -28,6 +30,11 @@ Template.home.events({
   },
   'click .js-signout': function() {
     //Meteor.loginWithTwitter({loginStyle: 'redirect'});
-    Meteor.logout();
+    //Meteor.logout();
+    //if (! Meteor.userId())
+    //  return Overlay.open('authOverlay');
+
+    return Overlay.open('logoutOverlay');
+
   }
 });

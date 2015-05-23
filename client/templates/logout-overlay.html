@@ -1,0 +1,13 @@
+<template name="logoutOverlay">
+  <div class="overlay auth">
+    <a href="#" class="js-close-overlay overlay-dismiss"><span class="icon-cross"></span></a>
+
+    <div class="wrapper-heading">
+      <div class="title-overlay">{{currentUser.profile.name}}</div>
+      <div class="subtitle-overlay">Weibo ID: {{currentUser.services.weibo.id}}</div>
+    </div>
+    <!--button class="js-signin btn-twitter">Sign In With Twitter</button-->
+    <button class="js-logout btn-primary"><span class="icon-weibo"></span>退出登录</button>
+
+  </div>
+</template>
