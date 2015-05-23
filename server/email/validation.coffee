@@ -1,6 +1,8 @@
 Future = Npm.require('fibers/future');
 
 Meteor.methods(
+  emailRegisted: (address)->
+    check(address,String)
   validateEmailAddress: (address)->
     check(address,String)
     validateEmail = new Future()

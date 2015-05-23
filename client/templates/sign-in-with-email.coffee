@@ -3,6 +3,27 @@ Template.signInWithEmail.events(
     e.preventDefault()
   'click .btn-create-account': ->
     Session.set 'createOrSignIn', 'create'
+    user =
+      email: $('[name="emailAddress"]').val()
+      password: $('[name="password"]').val()
+    Meteor.call 'validateEmailAddress', user.email, (error,response)->
+      if error
+        # If we get an error, let our user know.
+        alert error.reason
+      else
+        if response.error
+          # If we get an error from our method, alert to the user.
+          alert response.error
+        else
+          # If all is well, create the user's account!
+          Accounts.createUser(user, (error)->
+            if error
+              alert error.reason
+            else
+              $('.overlay-open').hide()
+              # If all works as expected, we need to hide our modal backdrop (lol, Bootstrap).
+              #$('.modal-backdrop').hide()
+          )
   'click .btn-sign-in': ->
     Session.set 'createOrSignIn', 'signin'
     email=$('[name="emailAddress"]').val()
