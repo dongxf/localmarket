@@ -4,13 +4,16 @@
 
     <div class="wrapper-heading">
       <div class="title-overlay">请先登录</div>
-      <div class="subtitle-overlay">健康食谱收藏和爱心美食分享易容易！</div>
+      <div class="subtitle-overlay">食谱收藏、爱心分享更方便</div>
     </div>
-    <div class="wrapper-body">
-      {{>signInWithEmail}}
+    <div class="wrapper-form">
+      <form id="sign-in-with-email">
+        <input type="email" name="emailAddress" placeholder="请输入电子邮件">
+        <input type="password" name="password" placeholder="请输入密码">
+      </form>
     </div>
-    <!--button class="js-signin btn-twitter">Sign In With Twitter</button-->
+    <button type="submit" class="btn-third js-create">新建帐户</button>
+    <button type="submit" class="btn-second js-login">登录账户</button>
     <button class="js-signin btn-primary"><span class="icon-weibo"></span>微博账号一键登录</button>
-
   </div>
 </template>
