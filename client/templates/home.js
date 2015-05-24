@@ -25,6 +25,7 @@ Template.home.helpers({
 
 Template.home.events({
   'click .js-signin': function() {
+    return Overlay.open('authOverlay');
     //Meteor.loginWithTwitter({loginStyle: 'redirect'});
     Meteor.loginWithWeibo({loginStyle: 'redirect'});
   },
