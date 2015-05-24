@@ -4,10 +4,15 @@
 
     <div class="wrapper-heading">
       <div class="title-overlay">{{currentUser.profile.name}}</div>
-      <div class="subtitle-overlay">Weibo ID: {{currentUser.services.weibo.id}}</div>
+      <div class="body-overlay">Eamil: {{userIdentity currentUser._id }}</div>
+      <div class="body-overlay">ID: {{currentUser._id}}</div>
+      <div class="body-overlay">Weibo ID: {{currentUser.services.weibo.id}}</div>
+      <!--
+      <div class="body-overlay">Eamil: {{currentUser.emails[0].address}}</div>
+      -->
     </div>
     <!--button class="js-signin btn-twitter">Sign In With Twitter</button-->
-    <button class="js-logout btn-primary"><span class="icon-weibo"></span>退出登录</button>
+    <button class="js-logout btn-primary">退出登录</button>
 
   </div>
 </template>

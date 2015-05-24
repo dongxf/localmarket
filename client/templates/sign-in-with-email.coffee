@@ -19,10 +19,12 @@ Template.signInWithEmail.events(
           Accounts.createUser(user, (error)->
             if error
               alert error.reason
+            ###
             else
               $('.overlay-open').hide()
               # If all works as expected, we need to hide our modal backdrop (lol, Bootstrap).
               #$('.modal-backdrop').hide()
+            ###
           )
   'click .btn-sign-in': ->
     Session.set 'createOrSignIn', 'signin'
