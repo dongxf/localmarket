@@ -63,143 +63,46 @@
   }
 
   .wrapper-form {
-    0text-align: center;
-    margin: 10rem 5%;
+    text-align: center;
+    margin: 10rem 10%;
     @media screen and (min-width: 30em) { margin: 10rem 10%; }
   }
   
   label {
-    .position(absolute, 0, 0, 0, 0);
-    background: @color-raw;
     .font-s3;
     .type-bold;
     display: block;
-    margin-bottom: .75rem;
-    padding-left: 1.25rem;
+    margin-bottom: 0;
+    padding-left: 0rem;
   }
 
-  form {
-    .font-s3;
-    padding: .75rem 0 0;
-    text-align: left;
-  }
-  // standard text input
-  //input[type="text"],
-input[type="password"], input[type="email"] {
-    -webkit-appearance: none;
-    -webkit-rtl-ordering: logical;
-    -webkit-user-select: text;
-    background-color: rgb(255, 255, 255);
-    border-bottom-color: rgba(84, 169, 235, 0.803922);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-left-color: rgba(84, 169, 235, 0.803922);
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-right-color: rgba(84, 169, 235, 0.803922);
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-top-color: rgba(84, 169, 235, 0.803922);
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-top-style: solid;
-    border-top-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset, rgba(82, 168, 236, 0.592157) 0px 0px 7.88600015640259px 0px;
-    color: rgb(124, 124, 124);
-    cursor: auto;
-    display: inline-block;
-    font-size: 1.68rem;
-    height: 3rem;
-    letter-spacing: normal;
-    line-height: 2rem;
-    margin-bottom: 0.1em;
-    position: relative;
-    text-rendering: auto;
-    text-shadow: none;
-    text-transform: none;
-    vertical-align: middle;
+  input {
+    height: 2.5rem;
+    font-size: 1.4rem;
     width: 100%;
-    word-spacing: 0px;
-    //color: @color-raw;
-    background-color: @color-raw;
-    text-align: left;
+    margin-bottom: .75rem;
   }
 
-  textarea {
-    .font-s3;
-    .type-regular;
-
-    // Sizing
-    padding: 1rem 1.25rem; //total height ~48
-    line-height: 1.5em !important;
-
-    // Style
-    .placeholder(@color-medium);
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    box-sizing: border-box;
-    color: @color-full;
-    outline: none;
-
-    &:active,
-    &:focus {
-
-    }
-
-    &[disabled] { opacity: .5; }
+  .btn-signin { 
+    .position(absolute, auto, 0, 8rem, 0, 100%);
+    //font-size: 1rem;
+    width: 80%;
+    margin: 10%;
+    background-color: @color-primary;
   }
-
-  // Custom checkbox
-  .checkbox {
-    .font-s3;
-    .type-bold;
-    color: @color-medium;
-    clear: both;
-    display: block;
-    line-height: 1rem !important;
-
-    cursor: pointer;
-    min-height: 1em;
-    position: relative; //necessary for special styling
-
-    input[type="checkbox"] {
-      font-size: 1em;
-      visibility: hidden;
-
-      & + span:before {
-        .position(relative, auto, auto, auto, -1em, .85em, .85em);
-        content: '';
-        box-shadow: @color-medium 0 0 0 1px inset;
-        display: inline-block;
-      }
-
-      &:checked + span:before {
-        box-shadow: none;
-        color: @color-primary;
-
-        // Icon family from icon.lessimport
-        font-family: 'market';
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-
-        // Better Font Rendering
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-
-        // Checkmark icon
-        content: "\e609";
-      }
-    }
+  .wrapper-social { 
+    .position(absolute, auto, 0, 4rem, 0, 100%);
+    font-size: 1rem;
+    width: 80%;
+    margin: 10%;
+    text-align: center;
   }
-
-  .btn-third { .position(absolute, auto, 0, 6rem, 0, 100%); background-color: @color-primary }
-  .btn-second { .position(absolute, auto, 0, 3rem, 0, 100%); color: @color-primary}
-  .btn-primary, .btn-twitter { .position(absolute, auto, 0, 0, 0, 100%); }
+  .btn-social {
+    background-color: @color-well;
+    width: 30%;
+    margin-left: 1%;
+  }
+  .btn-primary {
+    .position(absolute, auto, 0, 0, 0, 100%);
+  }
 }
