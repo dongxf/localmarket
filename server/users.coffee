@@ -41,6 +41,6 @@ Meteor.methods(
       name: if userData.name != "" then userData.name else null
       url: "http://trust.fooways.com"
     )
-    sendEmail( userData.email,"欢迎进驻丰巢，您的放心食品采购和健康食谱交流社区",emailTemplate)
+    sendEmail( userData.email,"欢迎进驻丰巢，您的健康食谱和放心食材源泉",emailTemplate)
 )
 

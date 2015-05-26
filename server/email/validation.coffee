@@ -1,8 +1,6 @@
 Future = Npm.require('fibers/future');
 
 Meteor.methods(
-  emailRegisted: (address)->
-    check(address,String)
   validateEmailAddress: (address)->
     check(address,String)
     validateEmail = new Future()
@@ -20,7 +18,15 @@ Meteor.methods(
           validateEmail.return(true)
     )
     validateEmail.wait()
-    ###
+  ifEmailUsed: (email)->
+    #Meteor.users.find({ "emails.address" : 'f...@foo.com' });
+    #Meteor.users.find({emails: {$elemMatch: {address: "f...@foo.com"}}})
+    if Meteor.users.find({"emails.address": email}, {limit: 1}).count() > 0
+      return true
+    else
+      return false
+      #throw new Meteor.Error(404, "未找到");
+    ###send sms
     url="http://tui3.com/api/send/?k=d98784f3ec44bb34b93488968bed81d7&r=json&p=1&t=18991166667&c="+msg
     url='http://tui3.com/api/send/?k=d98784f3ec44bb34b93488968bed81d7&r=json&p=1&t=18991166667&c=您的验证码是1234，感谢您注册丰巢优选'
     var result = Meteor.http.get(url,{timeout:3000});
