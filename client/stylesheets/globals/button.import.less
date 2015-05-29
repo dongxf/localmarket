@@ -63,7 +63,7 @@
     &:active { box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset; }
   }
 
-  &[class*="camera"] {
+  &[class*="photo"], &[class*="camera"] {
     border-radius: 10em;
     box-shadow: @color-primary 0 0 0px 2px inset;
     font-size: 20px; //reset
@@ -73,7 +73,7 @@
     text-indent: 0; //reset
     width: 4rem;
 
-    .icon-camera {
+    .icon-photo, .icon-camera {
       @dimension-camera: 3.5rem;
       .position(absolute, 50%, 50%, auto, auto, @dimension-camera, @dimension-camera );
       .transform(translate3d(50%, -50%,0));

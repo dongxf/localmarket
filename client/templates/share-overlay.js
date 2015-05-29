@@ -29,6 +29,15 @@ Template.shareOverlay.events({
         Session.set(IMAGE_KEY, data);
     });
   },
+
+  'click .js-upload-image': function() {
+    MeteorCamera.getPicture({width: 320}, function(error, data) {
+      if (error)
+        alert(error.reason);
+      else
+        Session.set(IMAGE_KEY, data);
+    });
+  },
   
   'click .js-unattach-image': function() {
     Session.set(IMAGE_KEY, null);

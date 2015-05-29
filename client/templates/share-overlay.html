@@ -5,13 +5,16 @@
       {{#unless attachedImage}}
         <a href="#" class="js-close-overlay overlay-dismiss"><span class="icon-cross"></span></a>
         <div class="wrapper-heading">
-          <div class="title-overlay">Share</div>
-          <div class="subtitle-overlay">Share that you made this recipe with the Local Market community.</div>
+          <div class="title-overlay">晒美食写心得</div>
+          <div class="subtitle-overlay">朋友们翘首以待</div>
         </div>
 
         <div class="wrapper-camera">
-          <a class="js-attach-image btn-camera"><span class="icon-camera"></span></a>
-          <div class="subtext-camera">Add your photo</div>
+          <form id="select photo">
+            <input type="file" class="js-upload-photo subtext-camera">
+          </form>
+          <a class="js-upload-photo btn-camera"><span class="icon-photo"></span></a>
+          <div class="subtext-camera">选取照片</div>
         </div>
       {{else}}
         <a href="#" class="js-unattach-image overlay-back"><span class="icon-arrow-left-alt"></span></a>
