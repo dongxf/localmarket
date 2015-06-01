@@ -55,6 +55,8 @@ observe-sequence@1.0.6
 ordered-dict@1.0.3
 percolate:velocityjs@1.2.1_1
 percolate:wireframing@0.2.0
+pfafman:materialize-modal@0.3.1
+pfafman:photo-up@0.2.6
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
@@ -64,6 +66,7 @@ routepolicy@1.0.5
 service-configuration@1.0.4
 session@1.1.0
 sha@1.0.3
+softwarerero:accounts-t9n@1.1.1
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3

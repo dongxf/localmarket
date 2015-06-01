@@ -1,12 +1,22 @@
 var TWEETING_KEY = 'shareOverlayTweeting';
 var IMAGE_KEY = 'shareOverlayAttachedImage';
 
+
 Template.shareOverlay.onCreated(function() {
   Session.set(TWEETING_KEY, true);
   Session.set(IMAGE_KEY, null);
 });
 
 Template.shareOverlay.helpers({
+  photoUpOptions: function(){
+    return {
+      'crop': true,
+      'callback': function(error, photo){
+        Meteor.call('uploadBuf',photo.img);
+      }
+    }
+  },
+
   attachedImage: function() {
     return Session.get(IMAGE_KEY);
   },
@@ -23,17 +33,30 @@ Template.shareOverlay.helpers({
 Template.shareOverlay.events({
   'click .js-attach-image': function() {
     MeteorCamera.getPicture({width: 320}, function(error, data) {
-      if (error)
-        alert(error.reason);
-      else
-        Session.set(IMAGE_KEY, data);
+      if (error) {
+        errmsg = "1" + error.reason;
+        //alert("1"+error.reason);
+        alert(errmsg);
+      }else{
+          Session.set(IMAGE_KEY, data);
+      }
     });
+  },
+
+  'click .js-upload-file': function() {
+    file = document.getElementById('photo_to_upload').files[0];
+    fr = new FileReader
+    fr.onload=function(e){};
+    fr.readAsBinaryString(file)
+    buf=fr.result
+    //Meteor.call('uploadImage',file.name);
+    Meteor.call('uploadBuffer',buf);
   },
 
   'click .js-upload-image': function() {
     MeteorCamera.getPicture({width: 320}, function(error, data) {
       if (error)
-        alert(error.reason);
+        alert("js-upload-image"+error.reason);
       else
         Session.set(IMAGE_KEY, data);
     });
@@ -51,10 +74,10 @@ Template.shareOverlay.events({
     var self = this;
 
     event.preventDefault();
-    
+
     var text = $(event.target).find('[name=text]').val();
     var tweet = Session.get(TWEETING_KEY);
-    
+
     Meteor.call('createActivity', {
       recipeName: self.name,
       text: text,
@@ -67,7 +90,7 @@ Template.shareOverlay.events({
           action: 'View',
           title: 'Your photo was shared.',
           callback: function() {
-            Router.go('recipe', { name: self.name }, 
+            Router.go('recipe', { name: self.name },
               { query: { activityId: result } });
 
             Template.recipe.setTab('feed');

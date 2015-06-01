@@ -1,6 +1,6 @@
 Meteor.methods(
-  uploadImage: ()->
-    createTestFile()
+  uploadImage: (filename)->
+    createTestFile(filename)
     ###
     qiniu = Meteor.npmRequire('qiniu')
     qiniu.conf.ACCESS_KEY= '5uVVFpR-YEOdlVqeI6vDnaJbVB61eZuFuAKvqCwu'
@@ -18,4 +18,6 @@ Meteor.methods(
         return ret.key
     )
     ###
+  uploadBuffer: (buf)->
+    createBuffer(buf)
 )

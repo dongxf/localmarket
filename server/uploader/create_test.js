@@ -4,13 +4,24 @@ qiniu.conf.SECRET_KEY = '4nF5wUXA9fsxzhTr3g2LFzW8CcGOTu-U8UT404Np';
 putPolicy = new qiniu.rs.PutPolicy('trust');
 extra = new qiniu.io.PutExtra();
 
-createTestFile = function() {
+createTestFile = function(filename) {
   var uptk = putPolicy.token();
-  qiniu.io.putFile(uptk,'test_file','/tmp/h.txt',extra,function(err,ret){
+  key = 'test_file.png'
+  qiniu.io.putFile(uptk,key,filename,extra,function(err,ret){
     if(!err){
       console.log(ret.key, ret.hash);
     }else{
       console.log(err);
     }
   });
+};
+
+createBuffer = function(buf) {
+  var uptk = putPolicy.token();
+  qiniu.io.put(uptk,'test_buf.png',buf,extra,function(err,ret){
+    if(!err)
+      console.log(ret.key, ret.hash);
+    else
+      console.log(err);
+  })
 }

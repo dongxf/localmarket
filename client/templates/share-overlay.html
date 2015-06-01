@@ -9,13 +9,15 @@
           <div class="subtitle-overlay">朋友们翘首以待</div>
         </div>
 
+
+        <form id="select_photo_form">
+        <input type="file" id="photo_to_upload">
         <div class="wrapper-camera">
-          <form id="select photo">
-            <input type="file" class="js-upload-photo subtext-camera">
-          </form>
-          <a class="js-upload-photo btn-camera"><span class="icon-photo"></span></a>
+          <a class="js-upload-file btn-camera"><span class="icon-photo"></span></a>
           <div class="subtext-camera">选取照片</div>
         </div>
+        <!--button class="js-upload-file btn-default" type="submit"></button-->
+        </form>
       {{else}}
         <a href="#" class="js-unattach-image overlay-back"><span class="icon-arrow-left-alt"></span></a>
         <div class="title-page">Share</div>
