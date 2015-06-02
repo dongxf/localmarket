@@ -20,4 +20,8 @@ Meteor.methods(
     ###
   uploadBuffer: (buf)->
     createBuffer(buf)
+
+  uptoken: ()->
+    getUptoken()
+
 )

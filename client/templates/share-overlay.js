@@ -45,12 +45,35 @@ Template.shareOverlay.events({
 
   'click .js-upload-file': function() {
     file = document.getElementById('photo_to_upload').files[0];
+    /*
     fr = new FileReader
     fr.onload=function(e){};
     fr.readAsBinaryString(file)
     buf=fr.result
-    //Meteor.call('uploadImage',file.name);
     Meteor.call('uploadBuffer',buf);
+    //Meteor.call('uploadImage',file.name);
+    */
+    Meteor.call('uptoken',function(err,res){
+      Session.set('uptoken',res);
+    })
+    var options={
+      domain: 'media.foodtrust.cn',
+      tokenUrl: 'http://localhost:3000/upload_token',
+      key: file.name,
+      prefix: 'upload_test/',
+      uptoken: Session.get('uptoken'),
+      uploadUrl: 'http://upload.qiniu.com/?token='+Session.get('uptoken')
+    }
+
+    var ins = new qiniuUploader(options);
+    ins.errHandle=function(e){ console.log(e.msg,e); }
+    ins.post(file,function(err,res){
+      if (err) {
+        alert(err.msg)
+      }else{
+        alert('post good');
+      }
+    });
   },
 
   'click .js-upload-image': function() {

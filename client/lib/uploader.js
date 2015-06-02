@@ -30,7 +30,7 @@
 		this.timeout = options.timeout || 5000; // By default 5000ms
 		this.maxMobileWidth = options.maxWidth || 480;
 		this.maxPcWidth = options.maxPcWidth || 960;
-		this.uploadUrl = 'http://upload.qiniu.com/?token=';
+		this.uploadUrl = options.uploadUrl || 'http://upload.qiniu.com/?token='+Session.get('uptoken');
 		this._getToken();
 	}
 
@@ -69,6 +69,7 @@
 	};
 
 	upload.prototype._getToken = function() {
+    /*
 		var xhr = this.createAjax();
 		var self = this;
 		xhr.open('GET', this.url, true);
@@ -92,6 +93,7 @@
 			}
 		}
 		xhr.send();
+    */
 	}
 
 	upload.prototype.post = function(file, cb) {
@@ -107,15 +109,20 @@
 		if (!this._xhr) {
 			this._xhr = this.createAjax();
 		}
+    /*
 		if (!this.token.uptoken) {
 			this._getToken();
 		}
+    */
+    alert("here:"+Session.get('uptoken'));
 		var data = new FormData();
 		data.append('file', file);
 		data.append('key', this.prefix + this.key);
 
-		var postUrl = this.uploadUrl + this.token.uptoken;
-		this._xhr.open('POST', postUrl, true);
+		//var postUrl = this.uploadUrl + this.token.uptoken;
+		var postUrl = this.uploadUrl;
+		//this._xhr.open('POST', postUrl, true);
+		this._xhr.open('POST', this.uploadUrl, true);
 		this._xhr.ontimeout = function() {
 			return cb('timeout');
 		}
