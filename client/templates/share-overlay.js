@@ -22,6 +22,7 @@ Template.shareOverlay.helpers({
   },
   
   avatar: function() {
+    return null;
     return Meteor.user().services.twitter.profile_image_url_https;
   },
   
@@ -34,9 +35,7 @@ Template.shareOverlay.events({
   'click .js-attach-image': function() {
     MeteorCamera.getPicture({width: 320}, function(error, data) {
       if (error) {
-        errmsg = "1" + error.reason;
-        //alert("1"+error.reason);
-        alert(errmsg);
+        alert(error.reason);
       }else{
           Session.set(IMAGE_KEY, data);
       }
@@ -45,14 +44,8 @@ Template.shareOverlay.events({
 
   'click .js-upload-file': function() {
     file = document.getElementById('photo_to_upload').files[0];
-    /*
-    fr = new FileReader
-    fr.onload=function(e){};
-    fr.readAsBinaryString(file)
-    buf=fr.result
-    Meteor.call('uploadBuffer',buf);
-    //Meteor.call('uploadImage',file.name);
-    */
+    fir = new FileReader;
+    fir.readAsDataURL(file);
     Meteor.call('uptoken',function(err,res){
       Session.set('uptoken',res);
     })
@@ -61,7 +54,6 @@ Template.shareOverlay.events({
       tokenUrl: 'http://localhost:3000/upload_token',
       key: file.name,
       prefix: 'upload_test/',
-      uptoken: Session.get('uptoken'),
       uploadUrl: 'http://upload.qiniu.com/?token='+Session.get('uptoken')
     }
 
@@ -69,9 +61,9 @@ Template.shareOverlay.events({
     ins.errHandle=function(e){ console.log(e.msg,e); }
     ins.post(file,function(err,res){
       if (err) {
-        alert(err.msg)
+        alert(err.msg);
       }else{
-        alert('post good');
+        Session.set(IMAGE_KEY,fir.result);
       }
     });
   },

@@ -114,7 +114,6 @@
 			this._getToken();
 		}
     */
-    alert("here:"+Session.get('uptoken'));
 		var data = new FormData();
 		data.append('file', file);
 		data.append('key', this.prefix + this.key);
