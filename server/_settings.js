@@ -30,18 +30,19 @@ ServiceConfiguration.configurations.remove({
 });
 ServiceConfiguration.configurations.insert({
   service: "weibo",
-  clientId: "2477162906",
-  secret: "b74cbdf3b23d0effa2c3e8620435a42b"
+  clientId: "158584162",
+  secret: "4e3dddf7ce943adcdc837b5ade1d30ae"
+  //clientId: "2477162906",
+  //secret: "b74cbdf3b23d0effa2c3e8620435a42b"
 });
 
-/*
-ServiceConfiguration.configurations.upsert(
-  { servcie: "weibo" },
-  {
-    $set: {
-    clientId: "2477162906",
-    secret: "b74cbdf3b23d0effa2c3e8620435a42b"
-    }
-   }
-);
-*/
+
+ServiceConfiguration.configurations.remove({
+  service: "wechat"
+});
+ServiceConfiguration.configurations.insert({
+  service: "wechat",
+  appId: "wx11b10e757aebde2f",
+  scope:'basic',
+  secret: "ef0fde3e58be478dc26020d12a957b38"
+});

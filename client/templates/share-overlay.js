@@ -51,7 +51,8 @@ Template.shareOverlay.events({
     })
     var options={
       domain: 'media.foodtrust.cn',
-      tokenUrl: 'http://localhost:3000/upload_token',
+      //tokenUrl: process.env.ROOT_URL+'upload_token', //this should only work on server side
+      tokenUrl: 'http://'+window.location.host+'/upload_token', //here maybe a bug, if ROOT_URL must not end with '/'.
       key: file.name,
       prefix: 'upload_test/',
       uploadUrl: 'http://upload.qiniu.com/?token='+Session.get('uptoken')

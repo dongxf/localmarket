@@ -20,7 +20,16 @@ Template.authOverlay.events(
   'click .js-twitter': ->
     $('#social-tips').text('>>翻墙后才可用<<');
   'click .js-wechat': ->
-    $('#social-tips').text('>>正在努力开发<<');
+    #$('#social-tips').text('>>正在努力开发<<');
+    $('#social-tips').text('>>微信登录中，请稍候<<');
+    Meteor.loginWithWechat(
+      loginStyle: 'redirect',
+      (err, response)->
+        if error
+          $('#social-tips').text error.reason
+        else
+          $('#social-tips').text '微信登录中，请稍候'
+    )
   'click .js-signin': ->
     email=$('[name="emailAddress"]').val()
     password=$('[name="password"]').val()
