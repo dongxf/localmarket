@@ -86,6 +86,15 @@ Template.recipe.events({
   },
 
   'click .js-share': function() {
-    Overlay.open('shareOverlay', this);
+    //Overlay.open('shareOverlay', this);
+    alert('before ready');
+    wx.ready(function(){
+      wx.chooseImage({
+        success: function (res) {
+          images.localId = res.localIds;
+          alert('已选择 ' + res.localIds.length + ' 张图片');
+        }
+      });
+    });
   }
 });

@@ -9,6 +9,12 @@ _.defaults(Meteor.settings, {
   twitter: {
     consumerKey: "8P3m74y3i8A97GKhAnErENFnX",
     secret: "WWITqdxeWvN8ngJ3jT9llhVaTxsPdxjLo4Wzq5ffhAXFZnrLLp"
+  },
+  wechat: {
+    appId: 'wxff8cf329bc5ec6be',
+    appSecret: 'afe523e9bcd47bdc320a3b336cee95f1',
+    accessToken: '',
+    updatedAt: 0
   }
 });
 
