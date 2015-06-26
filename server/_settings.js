@@ -14,6 +14,7 @@ _.defaults(Meteor.settings, {
     appId: 'wxff8cf329bc5ec6be',
     appSecret: 'afe523e9bcd47bdc320a3b336cee95f1',
     accessToken: '',
+    jsapiTicket: '',
     updatedAt: 0
   }
 });

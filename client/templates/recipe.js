@@ -86,9 +86,39 @@ Template.recipe.events({
   },
 
   'click .js-share': function() {
-    //Overlay.open('shareOverlay', this);
-    alert('before ready');
+    Overlay.open('shareOverlay', this);
+    /*
+    url=window.location.href;
+    Meteor.call('getWechatSignature',url,function(err,res){
+      config=res;
+      alert(config.signature);
+      wx.config({
+          debug: true, 
+          appId: config.appid,
+          timestamp: config.timestamp,
+          nonceStr: config.noncestr,
+          signature: config.signature,
+          jsApiList: [
+            'checkJsApi',
+            'chooseImage',
+            'previewImage',
+            'uploadImage',
+            'downloadImage'
+          ]
+      });
+    });
     wx.ready(function(){
+      wx.checkJsApi({
+        jsApiList: [
+          'chooseImage',
+          'previewImage',
+          'uploadImage',
+          'downloadImage'
+        ],
+        success: function (res) {
+          alert(JSON.stringify(res));
+        }
+      });
       wx.chooseImage({
         success: function (res) {
           images.localId = res.localIds;
@@ -96,5 +126,6 @@ Template.recipe.events({
         }
       });
     });
+    */
   }
 });
