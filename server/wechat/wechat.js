@@ -39,10 +39,11 @@ calcSignature = function(ticket, noncestr, ts, url){
 
 Meteor.methods({
   'getWechatSignature': function(url) {
+    console.log('url:'+url+' sig:'+sig);
     var tk=getWechatTicket();
     var ns=createNonceStr();
     var ts=createTimeStamp();
     var sig=calcSignature(tk,ns,ts,url);
-    return {signature: sig, noncestr: ns, timestampe: ts, appid: Meteor.settings.wechat.appId}
+    return {signature: sig, noncestr: ns, timestamp: ts, appid: Meteor.settings.wechat.appId}
   }
 });

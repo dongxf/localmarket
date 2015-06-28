@@ -51,5 +51,6 @@ ServiceConfiguration.configurations.insert({
   service: "wechat",
   appId: "wx11b10e757aebde2f",
   scope:'basic',
+  //scope: 'snsapi_login',
   secret: "ef0fde3e58be478dc26020d12a957b38"
 });

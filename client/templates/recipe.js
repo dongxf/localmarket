@@ -86,12 +86,10 @@ Template.recipe.events({
   },
 
   'click .js-share': function() {
-    Overlay.open('shareOverlay', this);
-    /*
+    //Overlay.open('shareOverlay', this);
     url=window.location.href;
     Meteor.call('getWechatSignature',url,function(err,res){
       config=res;
-      alert(config.signature);
       wx.config({
           debug: true, 
           appId: config.appid,
@@ -126,6 +124,5 @@ Template.recipe.events({
         }
       });
     });
-    */
   }
 });
